@@ -1,12 +1,12 @@
 ﻿Console.Clear();
-/* 
-Console.Write("Введите размер массива для разворота:");
+
+/* Console.Write("Введите размер массива для разворота:");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[size];
 FillArray(array, 0, 99);
 PrintArray(array);
 ReversMassive(array);
-PrintArray(array);
+PrintArray(array); */
 
 void FillArray(int[] value, int min = 0, int max = 10)
 {
@@ -34,4 +34,4 @@ void ReversMassive(int[] value)
         (value[i], value[size - i]) = (value[size - i], value[i]);
     }
 }
- */
+ 
