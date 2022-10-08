@@ -36,12 +36,22 @@ void PrintArray(double[,] inputArray)
         Console.WriteLine();
     }
 }
+
+void SearchValue()
+{
 Console.Write("Введите номер строки массива элемента для вывода: ");
 int rowEl = int.Parse(Console.ReadLine());
 
 Console.Write("Введите номер столбца массива элемента для вывода: ");
 int columnEl = int.Parse(Console.ReadLine());
-Console.WriteLine($"Значение по запросу индекса = {array[rowEl, columnEl]}");
+if (rowEl < array.GetLength(0) && columnEl < array.GetLength(1) && rowEl >= 0 && columnEl >= 0 )
+{
+    Console.WriteLine($"Значение по запросу индекса = {array[rowEl, columnEl]}");
+}
+else Console.WriteLine("Значения с данными индексами не существует!");
+}
+SearchValue();
+
 
 double[,] AverageArray(double[,] arrayEd)
 {
