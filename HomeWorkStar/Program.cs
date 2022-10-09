@@ -18,7 +18,7 @@ Console.WriteLine("---------------------------");
 int sum4angle = summ4angle(array);
 Console.WriteLine($"Сумма угловых значений массива = {sum4angle}");
 Console.WriteLine("---------------------------");
-
+ComparisonColumnsAndAngularValues();
 
 int[,] FillArray(int row, int table, int min = 1, int max = 10)
 {
@@ -66,7 +66,8 @@ int summ4angle(int[,] massiv)
     return summ4angle;
 }
 
-
+void ComparisonColumnsAndAngularValues()
+{
 int summTable = 0;
 for (int j = 0; j < array.GetLength(1); j++)
 {
@@ -81,12 +82,13 @@ for (int j = 0; j < array.GetLength(1); j++)
     { Console.WriteLine($"Сумма {j + 1} столбца = {summTable} что не больше суммы уговых значений массива!"); }
     summTable = 0;
 }
+}
 
 //когда сделал задачу подумал что найти 
 //сумму угловых значений можно гораздо прощще
 Console.WriteLine("---------------------------");
-int summReal = array[0, 0]  
+int summAngularValues = array[0, 0]  
              + array[0, array.GetLength(1) - 1] 
              + array[array.GetLength(0) - 1, 0] 
              + array[array.GetLength(0)-1,array.GetLength(1)-1];
-Console.WriteLine($"более простой способ нахождения угловых значений = "+ summReal);
+Console.WriteLine($"более простой способ нахождения угловых значений = "+ summAngularValues);
