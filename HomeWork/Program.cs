@@ -37,7 +37,7 @@ void PrintArray(double[,] inputArray)
     }
 }
 
-void SearchValue()
+void SearchValue(double[,] array)
 {
 Console.Write("Введите номер строки массива элемента для вывода: ");
 int rowEl = int.Parse(Console.ReadLine());
@@ -50,24 +50,24 @@ if (rowEl < array.GetLength(0) && columnEl < array.GetLength(1) && rowEl >= 0 &&
 }
 else Console.WriteLine("Значения с данными индексами не существует!");
 }
-SearchValue();
+SearchValue(array);
 
 
-double[,] AverageArray(double[,] arrayEd)
+double[,] AverageArray(double[,] array)
 {
     double sumColum = 0;
     double average = 0;
 
-    for (int j = 0; j < arrayEd.GetLength(1); j++)
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        for (int i = 0; i < arrayEd.GetLength(0); i++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            sumColum += arrayEd[i, j];
+            sumColum += array[i, j];
         }
-        average = Math.Round(sumColum / arrayEd.GetLength(0), 2);
+        average = Math.Round(sumColum / array.GetLength(0), 2);
         Console.WriteLine($" Среднее арифметическое элементов в {j + 1} столбце = {average}");
         sumColum = 0;
     }
-    return arrayEd;
+    return array;
 }
 AverageArray(array);
